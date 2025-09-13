@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
 
       - name: tag list
-        run: git tag
+        run: git tag >> $GITHUB_STEP_SUMMARY
       - name: ごにょごにょ
         run: |
           # 出力用ディレクトリ
