@@ -28,7 +28,7 @@ jobs:
           IFS=$'\n'
           git tag | while read tag
           do
-            if [ -z "$line" ]; then continue; fi
+            #if [ -z "$line" ]; then continue; fi
             git checkout "$tag"
             if [ -e "mantela.schema.json" ]; then
               mkdir "../build/${tag}"
@@ -41,7 +41,6 @@ jobs:
           # main ブランチの中のmantela.schema.json を build/ に配置する
           git checkout main
           if [ -e "mantela.schema.json" ]; then
-            mkdir "../build/"
             cp mantela.schema.json "../build/"
           fi
 
